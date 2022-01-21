@@ -3,11 +3,14 @@ class SliderBox {
     this.slides = document.querySelectorAll('.slide');
     this.slider = document.querySelector('.video-slider-themename');
     this.sliderContainer = document.querySelector('.slides-video-wrapper');
-    this.controls = document.querySelector('.slides-control-wrapper');
+    this.controls = this.slider.querySelector('.slides-control-wrapper');
+
   }
   init() {
     this.width = this.slider.offsetWidth;
-    window.addEventListener('resize', () => this.width = this.slider.offsetWidth);
+    window.addEventListener('resize', () => {
+      this.width = this.slider.offsetWidth;
+    });
 
     this.slides.forEach((item, i) => {
       this.createControl(i)

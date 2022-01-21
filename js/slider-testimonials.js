@@ -11,11 +11,10 @@ class Slider {
   }
 
   addSliderControl(){
-
-    document.querySelector('.testimonials-slider').style.height = this.slides_wrapper.getBoundingClientRect().height + 'px';
+    document.querySelector('.testimonials-slider').style.height = this.slides_wrapper.offsetHeight + 'px';
 
     if (this.slides_wrapper.getBoundingClientRect().width < this.slides_container.width) return;
-    
+
     let arrow_right = document.querySelector('.arrow-right');
     arrow_right.addEventListener('click' , this.slideArrowRight.bind(this));
 
